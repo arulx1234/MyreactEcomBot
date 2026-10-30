@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "enrich-products": "python update_products.py",
-    "import-products": "node import-products.js",
-    "test:catalog": "python -m unittest test_update_products",
-    "test": "node --test"
-  },
+  "start": "node server.js",
+  "enrich-products": "python update_products.py",
+  "import-products": "node import-products.js",
+  "test:catalog": "python -m unittest test_update_products",
+  "test": "node --test"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
