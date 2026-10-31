@@ -11,7 +11,7 @@ const recommendationsRouter = require('./recommendations');
 const adminAuth = require('./firebase-admin');
 
 const app = express();
-const PORT = 5000;
+const PORT = Number(process.env.PORT) || 5000;
 const ADMIN_EMAIL = (process.env.ADMIN_EMAIL || '').trim().toLowerCase();
 const ACCESS_TOKEN_SECRET = process.env.ACCESS_TOKEN_SECRET || 'development-access-token-secret';
 const REFRESH_TOKEN_SECRET = process.env.REFRESH_TOKEN_SECRET || 'development-refresh-token-secret';
@@ -965,6 +965,6 @@ initializeRefreshSessionStore()
     });
   })
   .catch((error) => {
-    console.error('Failed to initialize backend storage:', error.message);
+    console.error('Failed to initialize backend storage:', error);
     process.exit(1);
   });
